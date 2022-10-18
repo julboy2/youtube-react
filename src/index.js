@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Youtube from './components/service/youtube';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//  클래스를 1번만 호출하기위해 index.js 에 생성해서 props 를 넘겨줌 
+const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_API_KEY);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App youtube={youtube} />
   </React.StrictMode>
 );
 
